@@ -9,6 +9,8 @@ import { HeaderComponent } from './layout/header/header.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './shared/components/modals/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ErrorMessageComponent } from './shared/components/error-message.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -19,9 +21,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     BaseLayoutComponent,
 		LoginComponent,
-		SignUpComponent
+		SignUpComponent,
+    ErrorMessageComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, ReactiveFormsModule, HttpClientModule],
 	exports: [],
   providers: [],
   bootstrap: [AppComponent],

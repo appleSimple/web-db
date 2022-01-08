@@ -10,21 +10,11 @@
 				<label for="password">비밀번호</label>
 				<input type="password" class="form-control" id="password">
 			</div>
-			<button type="button" class="btn btn-info col" (click)="onSubmit()">로그인</button>
-			<a (click)="open(content)"><small>이 페이지가 처음이신가요?</small></a>
+			<button type="button" class="btn btn-info col mb-1" (click)="onSubmit()">로그인</button>
+			<button type="button" class="btn btn-warning col mb-2" (click)="doKakaoLogin()">카카오 로그인</button>
+			<a (click)="openSignUpModal()"><small>이 페이지가 처음이신가요?</small></a>
 		</form>
 	</div>
 </div>
 
-<ng-template #content let-modal >
-	<div class="modal-header" id="modal-basic-title">
-		<h4 class="modal-title">회원가입</h4>
-	</div>
-
-	<app-sign-up></app-sign-up>
-
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-dark col-6" (click)="modal.dismiss('Cross click')">취소</button>
-		<button type="button" class="btn btn-outline-dark col-6" (click)="modal.close('Save click')">회원가입</button>
-	</div>
-</ng-template>
+<app-sign-up *ngIf="openSignUp" (openSignUp)="closeModal($event)"></app-sign-up>
